@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduQuran & Beyond</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Navbar */
+    .navbar {
+      background-color: rgba(13, 110, 253, 0.95);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+    .navbar .nav-link:hover {
+      color: #ffd700 !important;
+    }
+
+    /* Hero Section */
+    .carousel-item img {
+      height: 600px;
+      object-fit: cover;
+    }
+    .carousel-caption {
+      background-color: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Subject Cards */
+    .card:hover {
+      transform: translateY(-10px);
+      transition: 0.3s;
+    }
+    .card img {
+      transition: transform 0.3s;
+    }
+    .card:hover img {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    /* About Me */
+    #about-me img {
+      border: 5px solid #0d6efd;
+      transition: transform 0.3s;
+    }
+    #about-me img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Contact & Registration Form */
+    input, textarea, select {
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0d6efd;
+      color: #fff;
+    }
+    footer a:hover {
+      color: #ffd700;
+    }
+
+    /* Sections spacing */
+    section {
+      padding: 80px 0;
+    }
+  </style>
+</head>
+<body>
+<!-- Professional Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="Images/logo.png" alt="Logo" style="height:50px; width:auto; margin-right:10px;">
+      <span class="fw-bold">EduQuran & Beyond</span>
+    </a>
+
+    <!-- Mobile Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPro">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarPro">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="#heroCarousel">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about-me">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#subjects-section">Subjects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery-section">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact-form">FAQs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#register-form">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Navbar Hover Effect */
+  .navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s;
+  }
+  .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #ffd700;
+    transition: width 0.3s ease, right 0.3s ease;
+  }
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
+    right: 0;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #ffd700 !important;
+  }
+</style>
+
+
+<!-- Hero Section -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="Images/Maths.jpg" class="d-block w-100" alt="Maths">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Learn Mathematics Easily</h2>
+        <p>Step by step explanations and practice for every student</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Science.jpg" class="d-block w-100" alt="Science">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Discover Science</h2>
+        <p>Engaging lessons with experiments and real-world applications</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Computer.jpg" class="d-block w-100" alt="Computer Science">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Explore Computer Science</h2>
+        <p>Learn coding, software, and technology skills</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="Images/Quran 1.jpg" class="d-block w-100" alt="Holy Quran">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Understand the Holy Quran</h2>
+        <p>Interactive lessons with explanation and guidance</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Subject Cards Section -->
+<section id="subjects-section" class="bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Subjects</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+          <img src="Images/Maths.jpg" class="card-img-top" alt="Maths">
+          <div class="card-body">
+            <h5 class="card-title">Maths</h5>
+            <p class="card-text">Understand numbers, formulas, and logic.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+          <img src="Images/Science.jpg" class="card-img-top" alt="Science">
+          <div class="card-body">
+            <h5 class="card-title">Science</h5>
+            <p class="card-text">Discover the wonders of the natural world.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+          <img src="Images/Computer.jpg" class="card-img-top" alt="Computer Science">
+          <div class="card-body">
+            <h5 class="card-title">Computer Science</h5>
+            <p class="card-text">Learn coding, software, and technology.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+          <img src="Images/Quran.jpg" class="card-img-top" alt="Holy Quran">
+          <div class="card-body">
+            <h5 class="card-title">Holy Quran</h5>
+            <p class="card-text">Understand and follow the teachings of Islam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Me Section -->
+<section id="about-me" class="py-5 bg-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="Images/CEO.jpeg" alt="Your Photo" class="rounded-circle shadow-sm" style="width: 200px; height: 200px; object-fit: cover;">
+      </div>
+      <div class="col-md-8">
+        <h2 class="mb-3">About Me</h2>
+        <p>Hello! I am <strong>Junaid Baghdadi</strong>, a passionate educator and software engineer. I have experience teaching students worldwide in Maths, Science, Computer Science, and the Holy Quran.</p>
+        <ul>
+          <li>Over 3 years of teaching online and in-person classes.</li>
+          <li>Specialized in simplifying complex concepts for beginners.</li>
+          <li>Skilled in Software Engineering, OOP, and academic tutoring.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Registration Form Section -->
+<!-- <section id="register-form" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Student Registration</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="reg-name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="reg-name" placeholder="Enter your full name" required>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="reg-email" placeholder="Enter your email" required>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-gender" class="form-label">Gender</label>
+              <select class="form-select" id="reg-gender" required>
+                <option selected disabled>Choose gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-dob" class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" id="reg-dob" required>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-country" class="form-label">Country</label>
+              <input type="text" class="form-control" id="reg-country" placeholder="Enter your country" required>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-age" class="form-label">Age</label>
+              <input type="number" class="form-control" id="reg-age" placeholder="Enter your age" required>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary px-4">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Registration Form Section -->
+<section id="register-form" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Student Registration</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form action="https://formsubmit.co/junaidengineer01@gmail.com" method="POST">
+          
+          <!-- Student Info -->
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="reg-name" class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" id="reg-name" placeholder="Enter your full name" required>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-email" class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" id="reg-email" placeholder="Enter your email" required>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-phone" class="form-label">Contact Number</label>
+              <input type="tel" name="phone" class="form-control" id="reg-phone" placeholder="Enter your contact number" required>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-gender" class="form-label">Gender</label>
+              <select name="gender" class="form-select" id="reg-gender" required>
+                <option selected disabled>Choose gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-dob" class="form-label">Date of Birth</label>
+              <input type="date" name="dob" class="form-control" id="reg-dob" required>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-country" class="form-label">Country</label>
+              <input type="text" name="country" class="form-control" id="reg-country" placeholder="Enter your country" required>
+            </div>
+            <div class="col-md-6">
+              <label for="reg-age" class="form-label">Age</label>
+              <input type="number" name="age" class="form-control" id="reg-age" placeholder="Enter your age" required>
+            </div>
+          </div>
+          
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary px-4">Register</button>
+          </div>
+
+          <!-- Formsubmit required hidden fields -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Form Section -->
+<section id="contact-form" class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center mb-4">Submit Your Query</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Description</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Write your query here..." required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary px-4">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Social Media & Newsletter Section -->
+<section class="py-5 bg-primary text-white">
+  <div class="container text-center">
+    <h3 class="mb-4">Stay Connected & Updated</h3>
+    <p class="mb-4">Follow us on social media or subscribe to our newsletter for updates!</p>
+
+    <!-- Social Media Icons -->
+    <div class="mb-4">
+      <a href="#" class="text-white fs-4 mx-3"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-white fs-4 mx-3"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-white fs-4 mx-3"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-white fs-4 mx-3"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="text-white fs-4 mx-3"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <!-- Newsletter Subscription -->
+    <form class="row justify-content-center">
+      <div class="col-md-6 col-sm-8">
+        <div class="input-group">
+          <input type="email" class="form-control" placeholder="Enter your email" required>
+          <button class="btn btn-dark" type="submit">Subscribe</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="pt-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-3 text-center mb-3 mb-md-0">
+        <img src="Images/logo.png" alt="Logo" class="rounded-circle mb-2" style="width: 80px; height: 80px; object-fit: cover;">
+        <h5>EduQuran & Beyond</h5>
+      </div>
+      <div class="col-md-5 text-center text-md-start mb-3 mb-md-0">
+        <p class="mb-1"><strong>Email:</strong> junaidengineer01@gmail.com</p>
+        <p class="mb-1"><strong>Phone:</strong> +92 3040054539</p>
+        <p class="mb-1"><strong>Address:</strong> Hasilpur, Pakistan</p>
+      </div>
+      <div class="col-md-4 text-center text-md-end">
+        <h6>Quick Links</h6>
+        <a href="#heroCarousel" class="text-white d-block">Home</a>
+        <a href="#about-me" class="text-white d-block">About Us</a>
+        <a href="#gallery-section" class="text-white d-block">Gallery</a>
+        <a href="#contact-form" class="text-white d-block">Contact</a>
+        <a href="#register-form" class="text-white d-block">Register</a>
+      </div>
+    </div>
+    <hr class="my-3 border-light">
+    <div class="text-center pb-2">
+      <p class="mb-0">© 2025 EduQuran & Beyond. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Smooth Scroll -->
+<script>
+  document.querySelectorAll('a.nav-link, .dropdown-item').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      if(this.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
